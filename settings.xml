@@ -18,7 +18,7 @@
         </repository>
         <repository>
           <id>github</id>
-          <url>https://maven.pkg.github.com/ajandaghi/releases</url>
+          <url>https://maven.pkg.github.com/ajandaghi/java-spBoot</url>
                     <snapshots>
                         <enabled>true</enabled>
                     </snapshots>
@@ -34,7 +34,7 @@
     <server>
       <id>github</id>
       <username>ajandaghi</username>
-      <password>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</password>
+      <password>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</password>
     </server>
   </servers>
 </settings>
