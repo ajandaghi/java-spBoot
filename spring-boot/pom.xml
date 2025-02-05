@@ -122,7 +122,12 @@
 
         </dependencies>
     </dependencyManagement>
-
+    <scm>
+        <connection>scm:git:https://github.com/ajandaghi/java-spBoot.git</connection>
+        <developerConnection>scm:git:https://github.com/ajandaghi/java-spBoot.git</developerConnection>
+        <url>https://github.com/ajandaghi/java-spBoot</url>
+        <tag>HEAD</tag>
+    </scm>
     <build>
         <extensions>
             <extension>

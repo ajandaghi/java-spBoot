@@ -136,12 +136,12 @@
         </dependency>
     </dependencies>
 
-<!--    <scm>-->
-<!--        <connection>scm:git:https://github.com/ajandaghi/java-spBoot.git</connection>-->
-<!--        <developerConnection>scm:git:https://github.com/ajandaghi/java-spBoot.git</developerConnection>-->
-<!--        <url>https://github.com/ajandaghi/java-spBoot</url>-->
-<!--      <tag>HEAD</tag>-->
-<!--  </scm>-->
+    <scm>
+        <connection>scm:git:https://github.com/ajandaghi/java-spBoot.git</connection>
+        <developerConnection>scm:git:https://github.com/ajandaghi/java-spBoot.git</developerConnection>
+        <url>https://github.com/ajandaghi/java-spBoot</url>
+      <tag>HEAD</tag>
+  </scm>
 <build>
     <extensions>
         <extension>
@@ -152,7 +152,9 @@
     </extensions>
     <plugins>
         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-assembly-plugin</artifactId>
+            <version>3.3.0</version>
             <executions>
                 <execution>
                     <phase>package</phase>
