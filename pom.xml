@@ -161,12 +161,12 @@
         <repository>
             <id>github</id>
             <name>ajandaghi</name>
-            <url>https://maven.pkg.github.com/ajandaghi/releases/</url>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot/</url>
         </repository>
         <snapshotRepository>
             <id>github</id>
             <name>ajandaghi</name>
-            <url>https://maven.pkg.github.com/ajandaghi/snapshots/</url>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
