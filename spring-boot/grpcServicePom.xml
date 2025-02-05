@@ -20,129 +20,121 @@
         <spring-cloud.version>2022.0.2</spring-cloud.version>
     </properties>
     <dependencies>
-        <dependency>
+        <dependency>  <!-- needed for gRPC-->
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.66.0</version>
             <scope>runtime</scope>
         </dependency>
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
             <version>1.66.0</version>
         </dependency>
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
             <version>1.66.0</version>
         </dependency>
-        <dependency> <!-- necessary for Java 9+ -->
+        <dependency> <!-- needed for gRPC--> <!-- necessary for Java 9+ -->
             <groupId>org.apache.tomcat</groupId>
             <artifactId>annotations-api</artifactId>
             <version>6.0.53</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
             <version>3.4.2</version>
         </dependency>
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-            <dependency>
-                <groupId>com.google.protobuf</groupId>
-                <artifactId>protobuf-java</artifactId>
-                <version>3.21.7</version>
-            </dependency>
+        <dependency>  <!-- needed for gRPC-->
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>3.21.7</version>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.protobuf/protoc -->
-        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protoc -->
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>com.google.protobuf</groupId>
             <artifactId>protoc</artifactId>
             <version>3.21.7</version>
             <type>pom</type>
         </dependency>
-
-
         <!-- https://mvnrepository.com/artifact/net.devh/grpc-server-spring-boot-starter -->
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>net.devh</groupId>
             <artifactId>grpc-server-spring-boot-starter</artifactId>
             <version>3.1.0.RELEASE</version>
-            <exclusions>
+            <exclusions> <!-- needed for gRPC-->
                 <exclusion>
                     <groupId>io.grpc</groupId>
                     <artifactId>grpc-netty</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>5.0.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty -->
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
             <version>1.70.0</version>
         </dependency>
-        <dependency>
+        <dependency> <!-- needed for gRPC-->
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
-
     </dependencies>
-    <dependencyManagement>
+    <dependencyManagement> <!-- needed for gRPC-->
         <dependencies>
-            <dependency>
+            <dependency> <!-- needed for gRPC-->
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-
-
         </dependencies>
     </dependencyManagement>
 
     <build>
         <extensions>
-            <extension>
+            <extension> <!-- needed for gRPC-->
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
                 <version>1.7.1</version>
             </extension>
         </extensions>
         <plugins>
-            <plugin>
+            <plugin> <!-- needed for gRPC-->
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.6.1</version>
-                <configuration>
+                <configuration> <!-- needed for gRPC-->
                     <protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>
                     <protocArtifact>com.google.protobuf:protoc:3.25.3:exe:${os.detected.classifier}</protocArtifact>
                     <pluginId>grpc-java</pluginId>
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.66.0:exe:${os.detected.classifier}</pluginArtifact>
                 </configuration>
-                <executions>
+                <executions> <!-- needed for gRPC-->
                     <execution>
                         <goals>
                             <goal>compile</goal>
@@ -151,7 +143,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin>
+            <plugin> <!-- needed for gRPC-->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4.1</version>

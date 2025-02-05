@@ -9,6 +9,8 @@ import java.time.temporal.*;
 import java.util.Date;
 import java.util.Scanner;
 
+import static java.lang.StackWalker.Option.RETAIN_CLASS_REFERENCE;
+
 public class Calendars {
     private ULocale PERSIAN_LOCALE = new ULocale("fa_IR@calendar=persian");
     private ULocale GREGORIAN_LOCALE = new ULocale("en@calendar=gregorian");
@@ -20,6 +22,8 @@ public class Calendars {
 
     private Calendar hijri=Calendar.getInstance(HIJRI_LOCALE);
     public static void main(String[] args) throws ParseException {
+        StackWalker walker = StackWalker.getInstance(RETAIN_CLASS_REFERENCE);
+        String ref=walker.getCallerClass().getSimpleName();
         while (true) {
             Scanner scanner = new Scanner(System.in);
 
@@ -62,6 +66,9 @@ public class Calendars {
                 case "6":
                     System.out.println(cal.gregorian2Hijri(dateStr));
                     break;
+            }
+            if(!ref.equals("MainMenu")){
+                break;
             }
 
         }
