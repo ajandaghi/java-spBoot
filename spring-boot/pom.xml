@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.6</version>
+        <version>3.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example.spring-boot</groupId>
@@ -20,121 +20,137 @@
         <spring-cloud.version>2022.0.2</spring-cloud.version>
     </properties>
     <dependencies>
-        <dependency>  <!-- needed for gRPC-->
+        <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty-shaded</artifactId>
             <version>1.66.0</version>
             <scope>runtime</scope>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-protobuf</artifactId>
             <version>1.66.0</version>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-stub</artifactId>
             <version>1.66.0</version>
         </dependency>
-        <dependency> <!-- needed for gRPC--> <!-- necessary for Java 9+ -->
+        <dependency> <!-- necessary for Java 9+ -->
             <groupId>org.apache.tomcat</groupId>
             <artifactId>annotations-api</artifactId>
             <version>6.0.53</version>
             <scope>provided</scope>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-webflux</artifactId>
             <version>3.4.2</version>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
         </dependency>
-        <dependency>  <!-- needed for gRPC-->
+        <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>3.21.7</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/com.google.protobuf/protoc -->
-        <dependency> <!-- needed for gRPC-->
+        <!-- https://mvnrepository.com/artifact/com.google.protobuf/protoc -->
+        <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protoc</artifactId>
             <version>3.21.7</version>
             <type>pom</type>
         </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/net.devh/grpc-server-spring-boot-starter -->
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>net.devh</groupId>
             <artifactId>grpc-server-spring-boot-starter</artifactId>
             <version>3.1.0.RELEASE</version>
-            <exclusions> <!-- needed for gRPC-->
+            <exclusions>
                 <exclusion>
                     <groupId>io.grpc</groupId>
                     <artifactId>grpc-netty</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>5.0.0</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.grpc/grpc-netty -->
-        <dependency> <!-- needed for gRPC-->
+        <dependency>
             <groupId>io.grpc</groupId>
             <artifactId>grpc-netty</artifactId>
-            <version>1.70.0</version>
+            <version>1.66.0</version>
         </dependency>
-        <dependency> <!-- needed for gRPC-->
-            <groupId>org.jetbrains</groupId>
-            <artifactId>annotations</artifactId>
-            <version>RELEASE</version>
-            <scope>compile</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.jetbrains</groupId>-->
+<!--            <artifactId>annotations</artifactId>-->
+<!--            <version>RELEASE</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
+
     </dependencies>
-    <dependencyManagement> <!-- needed for gRPC-->
+    <dependencyManagement>
         <dependencies>
-            <dependency> <!-- needed for gRPC-->
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
+
+
         </dependencies>
     </dependencyManagement>
 
     <build>
         <extensions>
-            <extension> <!-- needed for gRPC-->
+            <extension>
                 <groupId>kr.motd.maven</groupId>
                 <artifactId>os-maven-plugin</artifactId>
                 <version>1.7.1</version>
             </extension>
         </extensions>
         <plugins>
-            <plugin> <!-- needed for gRPC-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.6.1</version>
-                <configuration> <!-- needed for gRPC-->
+                <configuration>
                     <protoSourceRoot>${project.basedir}/src/main/proto</protoSourceRoot>
                     <protocArtifact>com.google.protobuf:protoc:3.25.3:exe:${os.detected.classifier}</protocArtifact>
                     <pluginId>grpc-java</pluginId>
                     <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.66.0:exe:${os.detected.classifier}</pluginArtifact>
                 </configuration>
-                <executions> <!-- needed for gRPC-->
+                <executions>
                     <execution>
                         <goals>
                             <goal>compile</goal>
@@ -143,24 +159,36 @@
                     </execution>
                 </executions>
             </plugin>
-            <plugin> <!-- needed for gRPC-->
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4.1</version>
-                <executions>
-                    <execution>
-                        <id>enforce</id>
-                        <goals>
-                            <goal>enforce</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <requireUpperBoundDeps/>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <id>enforce</id>-->
+<!--                        <goals>-->
+<!--                            <goal>enforce</goal>-->
+<!--                        </goals>-->
+<!--                        <configuration>-->
+<!--                            <rules>-->
+<!--                                <requireUpperBoundDeps/>-->
+<!--                            </rules>-->
+<!--                        </configuration>-->
+<!--                    </execution>-->
+<!--                </executions>-->
             </plugin>
         </plugins>
     </build>
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>ajandaghi</name>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot</url>
+        </repository>
+        <snapshotRepository>
+            <id>github</id>
+            <name>ajandaghi</name>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>

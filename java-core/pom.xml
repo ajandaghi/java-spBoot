@@ -2,8 +2,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example.java-core</groupId>
-    <artifactId>java-core</artifactId>
+    <groupId>org.example.java</groupId>
+    <artifactId>javacore</artifactId>
     <version>1.0.0.1-SNAPSHOT</version>
 
 
@@ -90,19 +90,13 @@
         </dependency>
 
     </dependencies>
-<!--    <scm>-->
-<!--        <url>https://github.com/ajandaghi/java-core.git</url>-->
-<!--        <connection>scm:git:https://github.com/ajandaghi/java-core.git</connection>-->
-<!--        <developerConnection>scm:git:https://github.com/ajandaghi/java-core.git</developerConnection>-->
-<!--        <tag>HEAD</tag>-->
-<!--    </scm>-->
 
-    <scm>
-        <connection>scm:git:https://github.com/ajandaghi/java-spBoot.git</connection>
-        <developerConnection>scm:git:https://github.com/ajandaghi/java-spBoot.git</developerConnection>
-        <url>https://github.com/ajandaghi/java-spBoot</url>
-      <tag>HEAD</tag>
-  </scm>
+<!--    <scm>-->
+<!--        <connection>scm:git:https://github.com/ajandaghi/java-spBoot.git</connection>-->
+<!--        <developerConnection>scm:git:https://github.com/ajandaghi/java-spBoot.git</developerConnection>-->
+<!--        <url>https://github.com/ajandaghi/java-spBoot</url>-->
+<!--      <tag>HEAD</tag>-->
+<!--  </scm>-->
 <build>
     <plugins>
         <plugin>
@@ -175,12 +169,12 @@
         <repository>
             <id>github</id>
             <name>ajandaghi</name>
-            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot/</url>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot</url>
         </repository>
         <snapshotRepository>
             <id>github</id>
             <name>ajandaghi</name>
-            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot/</url>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
