@@ -99,9 +99,9 @@
 <!--    </scm>-->
 
     <scm>
-        <connection>scm:git:https://github.com/ajandaghi/java-core.git</connection>
-        <developerConnection>scm:git:https://github.com/ajandaghi/java-core.git</developerConnection>
-        <url>https://github.com/ajandaghi/java-core</url>
+        <connection>scm:git:https://github.com/ajandaghi/java-spBoot.git</connection>
+        <developerConnection>scm:git:https://github.com/ajandaghi/java-spBoot.git</developerConnection>
+        <url>https://github.com/ajandaghi/java-spBoot</url>
       <tag>HEAD</tag>
   </scm>
 <build>
@@ -176,12 +176,12 @@
         <repository>
             <id>github</id>
             <name>ajandaghi</name>
-            <url>https://maven.pkg.github.com/ajandaghi/releases/</url>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot/</url>
         </repository>
         <snapshotRepository>
             <id>github</id>
             <name>ajandaghi</name>
-            <url>https://maven.pkg.github.com/ajandaghi/snapshots/</url>
+            <url>https://maven.pkg.github.com/ajandaghi/java-spBoot/</url>
         </snapshotRepository>
     </distributionManagement>
 </project>
