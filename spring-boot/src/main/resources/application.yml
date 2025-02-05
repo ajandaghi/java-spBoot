@@ -7,7 +7,7 @@ server:
 #    key-store-password: password
 #    key-password: password
     enabled: false
-#  port: 8080
+  port: 8081
 #
 #spring:
 #  cloud:
