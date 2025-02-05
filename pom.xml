@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.example.AJ</groupId>
     <artifactId>java-spBoot</artifactId>
-    <version>1.0.0.1-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <properties>
         <maven.compiler.target>3.0</maven.compiler.target>
         <maven.compiler.source>3.0</maven.compiler.source>

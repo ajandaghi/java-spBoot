@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_package = "test";
+option java_multiple_files = true;
+
+message RequestTest {
+    // a name to greet, default is "World"
+  string mess = 1;
+}
+
+message ResponseTest {
+    string mes = 1;
+}
+
+service TestSayHello {
+    rpc sayHello(RequestTest) returns (ResponseTest);
+}
