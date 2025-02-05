@@ -4,7 +4,7 @@
 
     <groupId>org.example.java-core</groupId>
     <artifactId>java-core</artifactId>
-    <version>1.0.0.1</version>
+    <version>1.0.0.1-SNAPSHOT</version>
 
 
     <properties>
